@@ -1,0 +1,101 @@
+body {
+  background-color: black;
+  display: grid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  border-radius: 5px;
+  opacity: 0;
+  animation: 2s hideImage linear;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  color: green;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  max-width: 18rem;
+  height: 18rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: .5rem;
+  border: solid 1px black;
+}
+
+.card {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border-color: black;
+  background-color: white;
+  animation: 2s hideCard linear;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  border-radius: 10px; 
+  color: white;
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+
+.card.active {
+  transform: rotateY(0);
+}
+
+.card.active img {
+  opacity: 1;
+}
+
+.unmatch {
+  border-radius: 5px;
+  animation: 2s hideCard linear;
+}
+
+@keyframes hideCard {
+  0%, 70% {
+    transform: rotateX(0deg);
+  } 100% {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes hideImage {
+  0%, 84% {
+    opacity: 1;
+  } 85% {
+    opacity: 0;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.actions button {
+  padding: 8px 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #27ae60;
+  color: white;
+  cursor: pointer;
+}
+
